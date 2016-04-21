@@ -389,9 +389,41 @@ function getImage(url){
                 </div>
 
             </section>
-        </section>
+            <section>
+                Consume Promises
+                <div class="code">
+<pre>
+ getImage('doggy.jpg').then(function(result){
+     document.getElementById('i').innerHTML = '< img src="'+result+'" />'
+     },function(errorurl){
+       console.log('Error loading ' + errorurl)
+    });
+    </pre>
+                    </div>
+            </section>
+            <section>
+            Chaining Promises
+                <br/> return another promise inside the then() method.
 
-        <section>
+            <div class="code">
+                <pre>
+getImage('dog1.png').then(function(url){
+    console.log(url + ' fetched!')
+    return getImage('dog2.png')
+    }).then(function(url){
+    console.log(url + ' fetched!')
+})
+
+//Console log:
+// dog1.png fetched
+// dog2.png fetched!
+</pre>
+
+            </div>
+
+
+        </section>
+            </section>
 
 
             <section id="fragments">
@@ -422,6 +454,8 @@ function getImage(url){
                <li>ES7 features
                 <a href="https://github.com/hemanth/es7-features">https://github.com/hemanth/es7-features</a>
                </li>
+
+                <li> <a href="https://ponyfoo.com/articles/tagged/es6-in-depth" target="_blank">ES6 in Depth</a></li>
             </ul>
         </section>
 
